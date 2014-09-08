@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Projects</title>
+	<!-- add styling to the assets/css folder-->
+	<link rel="stylesheet" type="text/css" href="assets/css/portfolio.css" />
+	<script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+	    $(document).ready(function() {
+		    $("body").css("display", "none");
+		 
+		    $("body").fadeIn(350);
+		 
+		    $("a").click(function(event){
+		        event.preventDefault();
+		        linkLocation = this.href;
+		        $("body").fadeOut(350, redirectPage);      
+		    });
+		         
+		    function redirectPage() {
+		        window.location = linkLocation;
+		    }
+		});
+	</script>
+</head>
+
+<body>
+	<div class="projectsfloater"></div>
+	<div class="body-center">
+	<div class="centered">
+	<!-- navbar -->
+	<div class="navbar">
+		<a href="index.html">Home</a> <span> || </span>
+		<a href="aboutme.html">About Me</a> <span> || </span>
+		<a href="projects.html">Projects</a> <span> || </span>
+		<a href="contact.html">Contact</a>
+	</div>
+	<!-- end navbar --> 
+	</div>
+	<br>
+
+	<h2>Projects</h2>
+
+	<h3>Super Puzzle Ninja</h3>
+	This is a Flash game that I made with the help of the Flixel library in May 2014. It's a puzzle game that combines mechanics from Super Puzzle Fighter II Turbo and N+. You can play it <a href="superpuzzleninja/SuperPuzzleNinja.html">here</a>!
+
+	<h3>ASoIaF Character Generator</h3>
+	This is a simple web tool that generates characters fit to live in the world of Westeros. Users can select gender, region, and house options, and then have the website create characters based on their specifications. I used JavaScript to handle character generation as well as some jQuery to animate things nicely. Check it out <a href='asoiafgenerator/main.html'>here</a>!
+	
+	<h3>This Website</h3>
+	This is my online portfolio, which started as an assignment in ENG 100. Throughout this project I learned basic web development by coding in HTML/CSS, utilized source control for the project with Github, and managed my website hosting through FTP. I also implemented my own novel features to the website by embedding Java applets and using jQuery to create smooth page transitions. 
+
+	<h3>Can One Fake Randomness?</h3>
+	This is a poster project, entered into the 2014 UIUC Undergraduate Research Symposium, that I worked on with my classmates Rishbabh Marya and Robert Weber, along with Professor A.J. Hildebrand. The project involved developing statistical tests in Java and JavaScript, along with heavy use of the JExcel API for data analysis. The poster was selected as a finalist for an Outstanding Presentation Award. Check it out <a href="assets/ursposter.pdf">here</a>!
+	
+	<h3>EmEssPaint</h3>
+	This is a non-copyright-infringing drawing program that I made in my high school Computer Science class. It was written in Java and makes use of the AWT API. You can mess with it <a href="notmspaint/notmspaint.html">here</a>!
+	
+	<h3>R. Kelly Saves the World</h3>
+	This is a top-down, Robotron-style shooter starring everyone's favorite R&B artist that I wrote in Java during the summer of 2013. It includes custom sound effects and graphics shamelessly stolen from Google Images. Play it <a href="rkstw/rkstw.html">here</a>!
+	
+</body>
+
+</div>
+	
+	</div>
+
+
+
+
+	<!-- add javascript code to the assets/js folder-->
+	<script type="text/javascript" src="assets/js/portfolio.js"></script>
+</body>
+</html>

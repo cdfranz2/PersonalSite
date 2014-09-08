@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>About Me</title>
+	<!-- add styling to the assets/css folder-->
+	<link rel="stylesheet" type="text/css" href="assets/css/portfolio.css" />
+	<script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+	    $(document).ready(function() {
+		    $("body").css("display", "none");
+		 
+		    $("body").fadeIn(350);
+		 
+		    $("a").click(function(event){
+		        event.preventDefault();
+		        linkLocation = this.href;
+		        $("body").fadeOut(350, redirectPage);      
+		    });
+		         
+		    function redirectPage() {
+		        window.location = linkLocation;
+		    }
+		});
+	</script>
+</head>
+
+<body>
+	<div class="aboutmefloater"></div>
+	<div class="body-center">
+	<!-- navbar -->
+	<div class="centered">
+	<div class="navbar">
+		<a href="index.html">Home</a> <span> || </span>
+		<a href="aboutme.html">About Me</a> <span> || </span>
+		<a href="projects.html">Projects</a> <span> || </span>
+		<a href="contact.html">Contact</a>
+	</div>
+	</div>
+	</span>
+	<!-- end navbar --> 
+	<br>
+	
+	<h2>About Me</h2>
+	
+	<img id="profile-picture" src="assets/img/chadfranzen.jpg" width="225" height="300" class="floatright" />
+	<p>Hi, my name is Chad Franzen. I am currently a Computer Science major at the University of Illinois at Urbana-Champaign but I'm originally from Algonquin, IL.</p>
+	<p>In high school, I competed in Worldwide Youth in Science and Engineering and won medals at the state finals. On campus, I'm a part of the Association for Computing Machinery and the Campus Honors Program. In elementary school I once earned a gold star on my multiplication test.</p>
+	<p>I've had experience working in the logistics department of an energy management company, as well as lots of volunteer experience in tutoring and other areas.</p>
+	<p>My hobbies include video games, reading, listening to standup comedy, and bugging people about A Song of Ice and Fire.</p>
+	<p>	Take a second to look at my <a href="assets/resume-chadfranzen.pdf">résumé</a>!</p>
+</body>
+
+</div>
+	
+	</div>
+
+
+
+
+	<!-- add javascript code to the assets/js folder-->
+	<script type="text/javascript" src="assets/js/portfolio.js"></script>
+</body>
+</html>

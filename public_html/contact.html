@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Contact</title>
+	<!-- add styling to the assets/css folder-->
+	<link rel="stylesheet" type="text/css" href="assets/css/portfolio.css" />
+	<script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+	    $(document).ready(function() {
+		    $("body").css("display", "none");
+		 
+		    $("body").fadeIn(350);
+		 
+		    $("a").click(function(event){
+		        event.preventDefault();
+		        linkLocation = this.href;
+		        $("body").fadeOut(350, redirectPage);      
+		    });
+		         
+		    function redirectPage() {
+		        window.location = linkLocation;
+		    }
+		});
+	</script>
+</head>
+
+<body>
+	<div class="contactfloater"></div>
+	<div class="body-center">
+		<div class="centered">
+		<!-- navbar -->
+		<div class="navbar">
+			<a href="index.html">Home</a> <span> || </span>
+			<a href="aboutme.html">About Me</a> <span> || </span>
+			<a href="projects.html">Projects</a> <span> || </span>
+			<a href="contact.html">Contact</a>
+		</div>
+		<!-- end navbar --> 
+		</div>
+		<br>
+	
+	<h2>Contact</h2>
+	<strong>Email: </strong><a href="mailto:cdfranz2@illinois.edu">cdfranz2@illinois.edu</a><br>
+	<strong>Github:</strong> <a href="http://www.github.com/cdfranz2">http://www.github.com/cdfranz2</a>
+	
+	</div>
+
+
+
+	<!-- add javascript code to the assets/js folder-->
+	<script type="text/javascript" src="assets/js/portfolio.js"></script>
+</body>
+</html>

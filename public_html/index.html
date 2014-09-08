@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Chad Franzen</title>
+	<!-- add styling to the assets/css folder-->
+	<link rel="stylesheet" type="text/css" href="assets/css/portfolio.css" />
+	<script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+	    $(document).ready(function() {
+		    $("body").css("display", "none");
+		 
+		    $("body").fadeIn(350);
+		 
+		    $("a").click(function(event){
+		        event.preventDefault();
+		        linkLocation = this.href;
+		        $("body").fadeOut(350, redirectPage);      
+		    });
+		         
+		    function redirectPage() {
+		        window.location = linkLocation;
+		    }
+		});
+	</script>
+</head>
+
+<body>
+	<div class="homefloater"></div>
+	<div class="body-center">
+			<div class="centered">
+			<h1>Chad Franzen</h1>
+			<!-- navbar -->
+			<div class="navbar">
+				<a href="index.html">Home</a> <span> || </span>
+				<a href="aboutme.html">About Me</a> <span> || </span>
+				<a href="projects.html">Projects</a> <span> || </span>
+				<a href="contact.html">Contact</a>
+			</div>
+			</div>
+			<!-- end navbar --> 
+			<br><br>
+		
+	</div>	
+	<!-- add javascript code to the assets/js folder-->
+	<script type="text/javascript" src="assets/js/portfolio.js"></script>
+</body>
+</html>
