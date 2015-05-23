@@ -174,8 +174,8 @@
 	<script src='backbone.js'></script>
 	<script src='info.js'></script>
 	<script type='text/template' id='weapon-select-template'>
-		<div style='width:100%;height:50%;padding-top:20px'><%=hand%></div>
-		<div style='width:50%;height:50%;float:left'>Img</div>
+		<div style='width:100%;height:30%;padding-top:20px'><%=hand%></div>
+		<div style='width:50%;height:50%;float:left' class='weaponimg'><img src='<%=image%>'></div>
 		<div style='width:50%;height:50%;float:left'>
 			<select class='weaponname'>
 				<option>Saw Cleaver</option>
@@ -252,7 +252,6 @@
 					this.set('hp', hpInfo[this.get('vit')]);
 				});
 				this.on('change:end', function(){
-					console.log('hi');
 					this.set('stam', stamInfo[this.get('end')]);
 					this.set('slowpois', poisInfo[this.get('end')]);
 					this.set('rapidpois', poisInfo[this.get('end')]);
@@ -360,6 +359,7 @@
 				baseatk: 0,
 				finalatk: 0,
 				character: null,
+				image: '',
 
 				//an array of objects with stats for each upgrade level, indexed 0 to 10
 				scalingInfo: null
@@ -373,6 +373,9 @@
 					this.set('scalingInfo', weaponInfo[this.get('name')]);
 					this.set(this.get('scalingInfo')[this.get('lvl')]);
 					this.updateAtk();
+				});
+				this.on('change:name', function() {
+					this.set('image', weaponImgs[this.get('name')]);
 				});
 				this.listenTo(this.get('character'), 'change', this.updateAtk);
 				this.set(this.get('scalingInfo')[this.get('lvl')]);
@@ -412,6 +415,7 @@
 			template: _.template($('#weapon-select-template').html()),
 			initialize: function() {
 				this.render();
+				this.listenTo(this.model, 'change:image', this.renderImage);
 			},
 			render: function() {
 				this.$el.html(this.template(this.model.toJSON()));
@@ -427,6 +431,9 @@
 					var upgrade = this.$('.weaponupgrade option:selected').text()[1];
 					this.model.set('lvl', parseInt(upgrade));
 				} 
+			},
+			renderImage: function() {
+				this.$('.weaponimg').html('<image src=\'' + this.model.get('image') + '\'>');
 			}
 		});
 
@@ -460,18 +467,20 @@
 				name: 'Saw Cleaver',
 				lvl: 0,
 				scalingInfo: weaponInfo['Saw Cleaver'],
-				character: finalChar
+				character: finalChar,
+				image: '\'cleaver.jpg\''
 			}),
 			new Weapon({
 				name: 'Threaded Cane',
 				lvl: 0,
 				scalingInfo: weaponInfo['Threaded Cane'],
-				character: finalChar
+				character: finalChar,
+				image: '\'cane.jpg\''
 			})
 		]);
 		
-		var leftHand = new Weapon({hand: 'Left Hand', name: 'Saw Cleaver', lvl: 0, scalingInfo: weaponInfo['Saw Cleaver'], character: finalChar});
-		var rightHand = new Weapon({hand: 'Right Hand', name: 'Saw Cleaver', lvl: 0, scalingInfo: weaponInfo['Saw Cleaver'], character: finalChar});
+		var leftHand = new Weapon({hand: 'Left Hand', name: 'Saw Cleaver', lvl: 0, scalingInfo: weaponInfo['Saw Cleaver'], character: finalChar, image: 'cleaver.jpg'});
+		var rightHand = new Weapon({hand: 'Right Hand', name: 'Saw Cleaver', lvl: 0, scalingInfo: weaponInfo['Saw Cleaver'], character: finalChar, image: 'cleaver.jpg'});
 
 		var leftHandSelect = new WeaponSelect({el: $('#lhandselect'), model: leftHand});
 		var rightHandSelect = new WeaponSelect({el: $('#rhandselect'), model: rightHand});

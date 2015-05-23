@@ -29,6 +29,12 @@ var weaponInfo =
 	]
 };
 
+var weaponImgs =
+{
+	'Saw Cleaver': 'cleaver.jpg',
+	'Threaded Cane': 'cane.jpg'
+}
+
 //determines the percentage of the attribute scaling ratio applied
 //indexed by level (str, ski, bld, or arc)
 var attributeRating = [
